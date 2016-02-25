@@ -118,6 +118,12 @@ virl_webmux_init:
     - source: "salt://virl/std/files/virl-webmux.conf"
     - mode: 0755
 
+virl_tap_counter_init:
+  file.managed:
+    - name: /etc/init/virl-tap-counter
+    - source: "salt://virl/std/files/virl_tap_counter"
+    - mode: 0755
+
 std_prereq_webmux:
   pip.installed:
   {% if proxy == true %}
